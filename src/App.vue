@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MNav></MNav>
+    <div class="container">
+      <transition-group name="fade" >
+        <router-view key="1"></router-view>
+        <router-view key="2" name="name"></router-view>
+        <router-view key="3" name="version"></router-view>
+      </transition-group>
+     
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MNav from './components/MNav.vue'
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  components:{
+    MNav
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
